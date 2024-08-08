@@ -14,6 +14,10 @@ app.use(cors())
 
 app.use('/api/v1/movies', moviesRouter)
 
+app.get('/', (req, res) => {
+    res.send('hello')
+})
+
 const port = process.env.PORT || 8000 
 
 const start = async () => {
