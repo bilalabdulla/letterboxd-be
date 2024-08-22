@@ -1,22 +1,28 @@
 const mongoose = require('mongoose')
 
 const MovieSchema = new mongoose.Schema({
+    imdbID: {
+        type: String,
+        required: [true, 'id should be provided'], 
+        unique: true,
+    },
     Title: {
         type: String,
-        required: true
+        required: true,
+        unique: true,
     },
     Year: {
         type: String,
-        required: true 
+        required: true
     },
     Actors: {
         type: String,
-        required: true 
+        required: true
     },
     Poster: {
         type: String,
-        required: true 
+        required: true
     }
 }, {timestamps: true})
 
-module.exports = mongoose.model('MovieTest', MovieSchema)
+module.exports = mongoose.model('MovieTests', MovieSchema)
