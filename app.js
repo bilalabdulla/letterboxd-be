@@ -28,6 +28,10 @@ app.use('/api/v1/usermovie', authenticateUser, userMovieRouter)
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/userfavourites', authenticateUser, userFavouritesRouter)
 
+app.get('/', (req, res) => {
+    res.status(200).json({message: 'good job'})
+})
+
 
 const port = process.env.PORT || 8000 
 
