@@ -16,7 +16,7 @@ const login = async (req, res) => {
     }
     const user = await User.findOne({ email })
     if(!user) {
-        res.status(404).json(' invalid credentials')
+        res.status(402).json(' invalid credentials')
     }
     const isPasswordCorrect = await user.comparePassword(password)
     if (!isPasswordCorrect) {
